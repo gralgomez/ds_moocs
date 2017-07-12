@@ -234,31 +234,32 @@ ls()  # returns objects in .GlobalEnv
 <h3>Variable Types</h3>
 <p>(<a href="https://www.tutorialspoint.com/r/r_data_types.htm" class="uri">https://www.tutorialspoint.com/r/r_data_types.htm</a>)</p>
 <div id="character" class="section level4">
-<h4>character</h4>
-<p>Strings</p>
+<h4>1. character</h4>
+<p>Strings <code>paste()</code></p>
+<p><code>append()</code></p>
 </div>
 <div id="integer" class="section level4">
-<h4>integer</h4>
+<h4>2. integer</h4>
 <p>Integers</p>
 </div>
 <div id="numeric" class="section level4">
-<h4>numeric</h4>
+<h4>3. numeric</h4>
 <p>Integers + Fractions</p>
 </div>
 <div id="factor" class="section level4">
-<h4>factor</h4>
+<h4>4. factor</h4>
 <p>Categorical variable where each level is a category</p>
 </div>
 <div id="logical" class="section level4">
-<h4>logical</h4>
+<h4>5. logical</h4>
 <p>Boolean (e.g TRUE/FALSE)</p>
 </div>
 <div id="complex" class="section level4">
-<h4>complex</h4>
+<h4>6. complex</h4>
 <p>Complex numbers (3 + 2i)</p>
 </div>
 <div id="raw" class="section level4">
-<h4>raw</h4>
+<h4>7. raw</h4>
 <p>Storage coded (e.g “Hello” is stored as 48656c6c6f)</p>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
@@ -320,13 +321,13 @@ v; class(v)</code></pre>
 <h3>Data Types</h3>
 <p>There are many types of R-objects. The frequently used ones are:</p>
 <div id="vector" class="section level4">
-<h4>Vector</h4>
-<p>In R programming, the very basic data types are the R-objects called <em>vectors</em> which hold elements of (same) variable classes of mode ‘mode’. Please note in R the number of classes is not confined to only the above six types, e.g we can use many atomic vectors and create an array whose class will become array.</p>
+<h4>1. Vector</h4>
+<p>(<a href="http://www.r-tutor.com/r-introduction/vector/vector-arithmetics" class="uri">http://www.r-tutor.com/r-introduction/vector/vector-arithmetics</a>) In R programming, the very basic data types are the R-objects called <em>vectors</em> which hold elements of (same) variable classes of mode ‘mode’. Please note in R the number of classes is not confined to only the above six types, e.g we can use many atomic vectors and create an array whose class will become array.</p>
 <div id="usage" class="section level5">
 <h5>Usage</h5>
-<p>vector(mode = “logical”, length = 0)</p>
-<p>as.vector(x, mode = “any”)</p>
-<p>is.vector(x, mode = “any”)</p>
+<p><code>vector(mode = &quot;logical&quot;, length = 0)</code></p>
+<p><code>as.vector(x, mode = &quot;any&quot;)</code></p>
+<p><code>is.vector(x, mode = &quot;any&quot;)</code></p>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
 <!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuIyBDcmVhdGUgYSB2ZWN0b3IuXG5hcHBsZSA8LSBjKCdyZWQnLCdncmVlbicsXCJ5ZWxsb3dcIilcbnByaW50KGFwcGxlKTsgcHJpbnQoY2xhc3MoYXBwbGUpKVxuXG5gYGAifQ== -->
@@ -342,41 +343,131 @@ print(apple); print(class(apple))
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
 </div>
-</div>
-<div id="matrix" class="section level4">
-<h4>Matrix</h4>
-<p>A matrix is a two-dimensional rectangular data set (n X m). It can be created using a vector input to the matrix function. All columns must uniformly contain only one variable type.</p>
+<div id="manipulating-vectors" class="section level5">
+<h5>Manipulating Vectors</h5>
+<div id="subsetting" class="section level6">
+<h6>Subsetting</h6>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuIyBDcmVhdGUgYSBtYXRyaXguXG5NID0gbWF0cml4KCBjKCdhJywnYScsJ2InLCdjJywnYicsJ2EnKSwgbnJvdyA9IDIsIG5jb2wgPSAzLCBieXJvdyA9IFRSVUUpXG5wcmludChNKTsgcHJpbnQoY2xhc3MoTSkpXG5cbmBgYCJ9 -->
-<pre class="r"><code># Create a matrix.
-M = matrix( c('a','a','b','c','b','a'), nrow = 2, ncol = 3, byrow = TRUE)
-print(M); print(class(M))
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuYXBwbGVcblxuYGBgIn0= -->
+<pre class="r"><code>apple
 </code></pre>
 <!-- rnb-source-end -->
-<!-- rnb-output-begin eyJkYXRhIjoiICAgICBbLDFdIFssMl0gWywzXVxuWzEsXSBcImFcIiAgXCJhXCIgIFwiYlwiIFxuWzIsXSBcImNcIiAgXCJiXCIgIFwiYVwiIFxuWzFdIFwibWF0cml4XCJcbiJ9 -->
-<pre><code>     [,1] [,2] [,3]
-[1,] &quot;a&quot;  &quot;a&quot;  &quot;b&quot; 
-[2,] &quot;c&quot;  &quot;b&quot;  &quot;a&quot; 
-[1] &quot;matrix&quot;</code></pre>
+<!-- rnb-output-begin eyJkYXRhIjoiWzFdIFwicmVkXCIgICAgXCJncmVlblwiICBcInllbGxvd1wiXG4ifQ== -->
+<pre><code>[1] &quot;red&quot;    &quot;green&quot;  &quot;yellow&quot;</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuYXBwbGUyIDwtIGFwcGxlWzI6M107ICMgZWxlbWVudHMgaW4gMiwzIHBvc2l0aW9uXG5hcHBsZTJcbmBgYCJ9 -->
+<pre class="r"><code>apple2 &lt;- apple[2:3]; # elements in 2,3 position
+apple2</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiWzFdIFwiZ3JlZW5cIiAgXCJ5ZWxsb3dcIlxuIn0= -->
+<pre><code>[1] &quot;green&quot;  &quot;yellow&quot;</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuYXBwbGUzIDwtIGFwcGxlW2MoMSwzKV0gIyBlbGVtZW50cyBpbiAxLDMgcG9zaXRpb24gXG5hcHBsZTNcbmBgYCJ9 -->
+<pre class="r"><code>apple3 &lt;- apple[c(1,3)] # elements in 1,3 position 
+apple3</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiWzFdIFwicmVkXCIgICAgXCJ5ZWxsb3dcIlxuIn0= -->
+<pre><code>[1] &quot;red&quot;    &quot;yellow&quot;</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuYXBwbGU0IDwtIGFwcGxlWy0xXSAjIGFsbCBlbGVtZW50cyBleGNlcHQgMSBwb3NpdGlvblxuYXBwbGU0XG5gYGAifQ== -->
+<pre class="r"><code>apple4 &lt;- apple[-1] # all elements except 1 position
+apple4</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiWzFdIFwiZ3JlZW5cIiAgXCJ5ZWxsb3dcIlxuIn0= -->
+<pre><code>[1] &quot;green&quot;  &quot;yellow&quot;</code></pre>
 <!-- rnb-output-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
 </div>
-<div id="array" class="section level4">
-<h4>Array</h4>
-<p>While matrices are confined to two dimensions, arrays can be of any number of dimensions. The array function takes a dim attribute which creates the required number of dimension. In the below example we create an array with two elements which are 3x3 matrices each. A two-dimensional array is the same thing as a matrix. One-dimensional arrays often look like vectors, but may be handled differently by some functions: str does distinguish them in recent versions of R.</p>
-<p>Array returns an array with the extents specified in dim and naming information in dimnames. The values in data are taken to be those in the array with the leftmost subscript moving fastest. If there are too few elements in data to fill the array, then the elements in data are recycled. If data has length zero, NA of an appropriate type is used for atomic vectors (0 for raw vectors) and NULL for lists.</p>
-<p>Unlike matrix, array does not currently remove any attributes left by as.vector from a classed list data, so can return a list array with a class attribute. ##### Usage ?array</p>
+<div id="sorting" class="section level6">
+<h6>Sorting</h6>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuYXJyYXkoZGF0YSA9IFt2ZWN0b3JdLCBkaW0gPSBsZW5ndGgoZGF0YSksIGRpbW5hbWVzID0gTlVMTClcbmFzLmFycmF5KHgsIC4uLilcbmlzLmFycmF5KHgpXG5gYGAifQ== -->
-<pre class="r"><code>array(data = [vector], dim = length(data), dimnames = NULL)
-as.array(x, ...)
-is.array(x)</code></pre>
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuc29ydChhcHBsZSkgI2FzY2VuZGluZyBzb3J0XG5zb3J0KGFwcGxlLCBkZWNyZWFzaW5nID0gVFJVRSkgI2Rlc2NlbmRpbmcgc29ydFxuXG5hcHBsZVtvcmRlcihhcHBsZSldICNhc2NlbmRpbmcgc29ydFxuYXBwbGVbcmV2KG9yZGVyKGFwcGxlKSldICAjZGVzY2VuZGluZyBzb3J0XG5gYGAifQ== -->
+<pre class="r"><code>sort(apple) #ascending sort
+sort(apple, decreasing = TRUE) #descending sort
+
+apple[order(apple)] #ascending sort
+apple[rev(order(apple))]  #descending sort</code></pre>
 <!-- rnb-source-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
+</div>
+<div id="sampling-and-missing-values" class="section level6">
+<h6>Sampling and Missing Values</h6>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuYXBwbGU1XG5cbmBgYCJ9 -->
+<pre class="r"><code>apple5
+</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiWzFdIFwicmVkXCIgICAgXCJncmVlblwiICBcInllbGxvd1wiXG4ifQ== -->
+<pre><code>[1] &quot;red&quot;    &quot;green&quot;  &quot;yellow&quot;</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuYXBwbGVcblxuYGBgIn0= -->
+<pre class="r"><code>apple
+</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiWzFdIFwicmVkXCIgICAgXCJncmVlblwiICBcInllbGxvd1wiIE5BICAgICAgXG4ifQ== -->
+<pre><code>[1] &quot;red&quot;    &quot;green&quot;  &quot;yellow&quot; NA      </code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuc2FtcGxlKGFwcGxlKSAgIyBzYW1wbGUgYWxsIGVsZW1lbnRzIHJhbmRvbWx5XG5gYGAifQ== -->
+<pre class="r"><code>sample(apple)  # sample all elements randomly</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiWzFdIFwicmVkXCIgICAgXCJ5ZWxsb3dcIiBcImdyZWVuXCIgIE5BICAgICAgXG4ifQ== -->
+<pre><code>[1] &quot;red&quot;    &quot;yellow&quot; &quot;green&quot;  NA      </code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuc2V0LnNlZWQoNTApICMgb3B0aW9uYWwuIHNldCBpdCB0byBnZXQgc2FtZSByYW5kb20gc2FtcGxlcy5cbnNhbXBsZShhcHBsZSwgMikgICMgc2FtcGxlIDMgZWxlbSB3aXRob3V0IHJlcGxhY2VtZW50XG5gYGAifQ== -->
+<pre class="r"><code>set.seed(50) # optional. set it to get same random samples.
+sample(apple, 2)  # sample 3 elem without replacement</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiWzFdIFwieWVsbG93XCIgXCJncmVlblwiIFxuIn0= -->
+<pre><code>[1] &quot;yellow&quot; &quot;green&quot; </code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuYXBwbGUyXG5gYGAifQ== -->
+<pre class="r"><code>apple2</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiWzFdIFwiZ3JlZW5cIiAgXCJ5ZWxsb3dcIlxuIn0= -->
+<pre><code>[1] &quot;green&quot;  &quot;yellow&quot;</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuc2FtcGxlKGFwcGxlMiwgMywgcmVwbGFjZT1UKSAgIyBzYW1wbGUgd2l0aCByZXBsYWNlbWVudFxuYGBgIn0= -->
+<pre class="r"><code>sample(apple2, 3, replace=T)  # sample with replacement</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiWzFdIFwiZ3JlZW5cIiAgXCJ5ZWxsb3dcIiBcInllbGxvd1wiXG4ifQ== -->
+<pre><code>[1] &quot;green&quot;  &quot;yellow&quot; &quot;yellow&quot;</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+</div>
+</div>
+</div>
+<div id="matrix" class="section level4">
+<h4>2. Matrix</h4>
+<p>A matrix is a two-dimensional rectangular data set (n X m). It can be created using a vector input to the matrix function. All columns must uniformly contain only one variable type.</p>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuIyBDcmVhdGUgYSBtYXRyaXguXG5NID0gbWF0cml4KCBjKCdhJywnYScsJ2InLCdjJywnYicsJ2EnKSwgbnJvdyA9IDIsIG5jb2wgPSAzLCBieXJvdyA9IFRSVUUpXG5wcmludChNKTsgcHJpbnQoY2xhc3MoTSkpXG5gYGAifQ== -->
+<pre class="r"><code># Create a matrix.
+M = matrix( c('a','a','b','c','b','a'), nrow = 2, ncol = 3, byrow = TRUE)
+print(M); print(class(M))</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+</div>
+<div id="array" class="section level4">
+<h4>3. Array</h4>
+<p>While matrices are confined to two dimensions, arrays can be of any number of dimensions. The array function takes a dim attribute which creates the required number of dimension. In the below example we create an array with two elements which are 3x3 matrices each. A two-dimensional array is the same thing as a matrix. One-dimensional arrays often look like vectors, but may be handled differently by some functions: str does distinguish them in recent versions of R.</p>
+<p>Array returns an array with the extents specified in dim and naming information in dimnames. The values in data are taken to be those in the array with the leftmost subscript moving fastest. If there are too few elements in data to fill the array, then the elements in data are recycled. If data has length zero, NA of an appropriate type is used for atomic vectors (0 for raw vectors) and NULL for lists.</p>
+<p>Unlike matrix, array does not currently remove any attributes left by as.vector from a classed list data, so can return a list array with a class attribute.</p>
+<div id="usage-array" class="section level5">
+<h5>Usage (?array)</h5>
+<p><code>array(data = [vector], dim = length(data), dimnames = NULL)</code></p>
+<p><code>as.array(x, ...)</code></p>
+<p><code>is.array(x)</code></p>
+</div>
 <div id="arguments" class="section level5">
 <h5>Arguments</h5>
 <ul>
@@ -395,7 +486,7 @@ print(array1); print(class(array1))</code></pre>
 </div>
 </div>
 <div id="data.frame" class="section level4">
-<h4>Data.frame</h4>
+<h4>4. Data.frame</h4>
 <p>Data frames are tabular data objects (n X m). Unlike a matrix, in data frame each column can contain different modes of data. The first column can be numeric while the second column can be character and third column can be logical. It is a list of vectors of equal length.</p>
 <p>Data Frames are created using the data.frame() function.</p>
 <!-- rnb-text-end -->
@@ -413,20 +504,72 @@ print(BMI); print(class(BMI))</code></pre>
 <!-- rnb-text-begin -->
 </div>
 <div id="list" class="section level4">
-<h4>List</h4>
-<p>A list is an R-object which can contain many different types of elements inside it like vectors, functions and even another list inside it. Can hold objects of different classes and lengths.</p>
+<h4>5. List</h4>
+<p>A list is an R-object which can contain many different types of elements inside it like vectors, functions and even another list inside it. A List can hold objects of different classes and lengths and it functions to construct, coerce and check for both kinds of R lists.</p>
+<p>Almost all lists in R internally are Generic Vectors, whereas traditional dotted pair lists (as in LISP) remain available but rarely seen by users (except as formals of functions).</p>
+<p>The arguments to list or pairlist are of the form value or tag = value. The functions return a list or dotted pair list composed of its arguments with each value either tagged or untagged, depending on how the argument was specified.</p>
+<p>The “environment” method for as.list copies the name-value pairs (for names not beginning with a dot) from an environment to a named list. The user can request that all named objects are copied. Unless sorted = TRUE, the list is in no particular order (the order depends on the order of creation of objects and whether the environment is hashed). No enclosing environments are searched. (Objects copied are duplicated so this can be an expensive operation.) Note that there is an inverse operation, the as.environment() method for list objects.</p>
+<div id="usage-1" class="section level5">
+<h5>Usage</h5>
+<p><code>list(...)</code>, <code>pairlist(...)</code>, <code>as.list(x, ...)</code>, <code>alist(...)</code></p>
+<p><code>as.list(x, all.names = FALSE, sorted = FALSE, ...)</code></p>
+<p><code>x: object to the coerced or tested</code></p>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuIyBDcmVhdGUgYSBsaXN0LlxubGlzdDEgPC0gbGlzdChjKDIsNSwzKSwyMS4zLHNpbilcbnByaW50KGxpc3QxKTsgcHJpbnQoY2xhc3MobGlzdDEpKVxuYGBgIn0= -->
-<pre class="r"><code># Create a list.
-list1 &lt;- list(c(2,5,3),21.3,sin)
-print(list1); print(class(list1))</code></pre>
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxubGlzdDEgPC0gbGlzdChjKDIsNSwzKSwgMjEuMywgc2luKVxucHJpbnQobGlzdDEpOyBwcmludChjbGFzcyhsaXN0MSkpXG5cbmBgYCJ9 -->
+<pre class="r"><code>list1 &lt;- list(c(2,5,3), 21.3, sin)
+print(list1); print(class(list1))
+</code></pre>
 <!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiW1sxXV1cblsxXSAyIDUgM1xuXG5bWzJdXVxuWzFdIDIxLjNcblxuW1szXV1cbmZ1bmN0aW9uICh4KSAgLlByaW1pdGl2ZShcInNpblwiKVxuXG5bMV0gXCJsaXN0XCJcbiJ9 -->
+<pre><code>[[1]]
+[1] 2 5 3
+
+[[2]]
+[1] 21.3
+
+[[3]]
+function (x)  .Primitive(&quot;sin&quot;)
+
+[1] &quot;list&quot;</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+</div>
+</div>
+<div id="unlist" class="section level4">
+<h4>Unlist</h4>
+<p>[<code>?unlist</code>] Given a list structure x, unlist simplifies it to produce a vector which contains all the atomic components which occur in x.</p>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxubGlzdDIgPC0gdW5saXN0KGxpc3QxLCByZWN1cnNpdmUgPSBGQUxTRSlcbmxpc3QyOyBwcmludChjbGFzcyhsaXN0MikpXG5cbmBgYCJ9 -->
+<pre class="r"><code>list2 &lt;- unlist(list1, recursive = FALSE)
+list2; print(class(list2))
+</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiW1sxXV1cblsxXSAyXG5cbltbMl1dXG5bMV0gNVxuXG5bWzNdXVxuWzFdIDNcblxuW1s0XV1cblsxXSAyMS4zXG5cbltbNV1dXG5mdW5jdGlvbiAoeCkgIC5QcmltaXRpdmUoXCJzaW5cIilcblxuWzFdIFwibGlzdFwiXG4ifQ== -->
+<pre><code>[[1]]
+[1] 2
+
+[[2]]
+[1] 5
+
+[[3]]
+[1] 3
+
+[[4]]
+[1] 21.3
+
+[[5]]
+function (x)  .Primitive(&quot;sin&quot;)
+
+[1] &quot;list&quot;</code></pre>
+<!-- rnb-output-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
 </div>
 <div id="factor-1" class="section level4">
-<h4>Factor</h4>
+<h4>6. Factor</h4>
 <p>Factors are the r-objects which are created using a vector. It stores the vector along with the distinct values of the elements in the vector as labels. The labels are always character irrespective of whether it is numeric or character or Boolean etc. in the input vector. They are useful in statistical modeling. Factors are created using the factor() function. The nlevels functions gives the count of levels.</p>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
@@ -438,13 +581,63 @@ print(factor_apple); print(class(factor_apple))</code></pre>
 <!-- rnb-source-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
+</div>
+<div id="dates" class="section level4">
+<h4>7. Dates</h4>
+<p>(<a href="https://www.stat.berkeley.edu/~s133/dates.html" class="uri">https://www.stat.berkeley.edu/~s133/dates.html</a>)</p>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuZGF0ZVN0cmluZyA8LSBcIjE1LzA2LzIwMTRcIlxuIyBcIkRhdGVcIlxubXlEYXRlIDwtIGFzLkRhdGUoZGF0ZVN0cmluZywgZm9ybWF0PVwiJWQvJW0vJVlcIilcbm15RGF0ZTsgcHJpbnQoY2xhc3MobXlEYXRlKSkgIFxuXG4jIFwiUE9TSVhsdFwiIFwiUE9TSVh0XCJcbm15UE9TSVhsdERhdGUxIDwtIGFzLlBPU0lYbHQobXlEYXRlKTsgXG5teVBPU0lYbHREYXRlMTsgcHJpbnQoY2xhc3MobXlQT1NJWGx0RGF0ZTEpKVxuXG4jIFwiUE9TSVhjdFwiIFwiUE9TSVh0XCIgXG5teVBPU0lYY3REYXRlMiA8LSBhcy5QT1NJWGN0KG15RGF0ZSk7IFxubXlQT1NJWGN0RGF0ZTI7IHByaW50KGNsYXNzKG15UE9TSVhjdERhdGUyKSlcbmBgYCJ9 -->
+<pre class="r"><code>dateString &lt;- &quot;15/06/2014&quot;
+# &quot;Date&quot;
+myDate &lt;- as.Date(dateString, format=&quot;%d/%m/%Y&quot;)
+myDate; print(class(myDate))  
+
+# &quot;POSIXlt&quot; &quot;POSIXt&quot;
+myPOSIXltDate1 &lt;- as.POSIXlt(myDate); 
+myPOSIXltDate1; print(class(myPOSIXltDate1))
+
+# &quot;POSIXct&quot; &quot;POSIXt&quot; 
+myPOSIXctDate2 &lt;- as.POSIXct(myDate); 
+myPOSIXctDate2; print(class(myPOSIXctDate2))</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+</div>
+</div>
+<div id="converting-data-types" class="section level3">
+<h3>Converting Data Types</h3>
+<div id="data.frame-1" class="section level4">
+<h4>Data.Frame</h4>
+</div>
+<div id="matrix-1" class="section level4">
+<h4>Matrix</h4>
+</div>
+<div id="list-1" class="section level4">
+<h4>List</h4>
+</div>
+<div id="factors" class="section level4">
+<h4>Factors</h4>
+</div>
+</div>
+<div id="viewing-objects" class="section level3">
+<h3>Viewing Objects</h3>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuYXR0cmlidXRlcyhteVBPU0lYbHREYXRlMSkgI2F0dHJpYnV0ZXMgXG4jdW5jbGFzcyhteVBPU0lYbHREYXRlMSkgICMgd29ya3MhXG4jbmFtZXMobXlQT1NJWGx0RGF0ZSkgICMgZG9lc24ndCB3b3JrIG9uIGEgUE9TSVhsdCBvYmplY3RcbnVubGlzdChteVBPU0lYbHREYXRlMSkgICMgd29ya3MhXG5gYGAifQ== -->
+<pre class="r"><code>attributes(myPOSIXltDate1) #attributes 
+#unclass(myPOSIXltDate1)  # works!
+#names(myPOSIXltDate)  # doesn't work on a POSIXlt object
+unlist(myPOSIXltDate1)  # works!</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
 <!-- rnb-text-end -->
 </div>
 </div>
 </div>
-</div>
 
-<div id="rmd-source-code">LS0tCnRpdGxlOiAiUiBFeGVyY2lzZXMiCm91dHB1dDogaHRtbF9ub3RlYm9vawotLS0KYGBge3J9CiMgc291cmNlOiBodHRwOi8vcnN0YXRpc3RpY3MubmV0LwpzZXR3ZCgiL1VzZXJzL2xhdXJpdGEvRG9jdW1lbnRzL0dpdEh1Yi9kc19tb29jcy9yX3Byb2dyYW1pbmcvIikKYGBgCgojIFIgVHV0b3JpYWwKVGhpcyB3b3Jrc2hlZXQgaXMgbWVhbnQgdG8gcmVmcmVzaCBSIGNvbmNlcHRzIGFuZCBwdXQgdGhlbSB0byBwcmFjdGljZSBpbiBhIG5lYXIgZnV0dXJlLiBUaGUgc291cmNlIG9mIHRoZSB0dXRvcmlhbCBpczogaHR0cDovL3JzdGF0aXN0aWNzLm5ldC9yLXR1dG9yaWFsLWV4ZXJjaXNlLWZvci1iZWdpbm5lcnMvCgojIyBFbnZpcm9ubWVudHMKVGhlIG91dGVybW9zdCBtYWluIGNvbnRhaW5lciBpcyBjYWxsZWQgdGhlIGdsb2JhbCBlbnZpcm9ubWVudCAoZ2xvYmFsZW52KCkpLgpUaGlzIGlzIHRoZSBkZWZhdWx0IHBsYWNlIHdpbGwgUiB3aWxsIHN0b3JlIGFsbCBvYmplY3RzIHRoYXQgeW91IGNyZWF0ZS4gWW91IGNhbiBwbGFjZSBhcyBtYW55IG9iamVjdHMgYXMgeW91ciBjb21wdXRlciBtZW1vcnkgd2lsbCBhbGxvdyBpdCB0byBob2xkLgoKYGBge3J9CmVudjEgPC0gbmV3LmVudigpICAjIGNyZWF0ZSBhIG5ldyBlbnZpcm9ubWVudAphc3NpZ24oImEiLCAzLCBlbnZpciA9IGVudjEpICAjIHN0b3JlIGE9MyBpbnNpZGUgZW52MQpscygpICAjIHJldHVybnMgb2JqZWN0cyBpbiAuR2xvYmFsRW52CmxzKGVudjEpICAjIHJldHVybnMgb2JqZWN0cyBpbiBlbnYxCmdldCgnYScsIGVudmlyPWVudjEpICAjIHJldHJpZXZlIHZhbHVlIGZyb20gZW52MQpgYGAKCk9uY2UgeW91IGtub3cgaG93IHRvIGluc2VydCBvYmplY3RzIGludG8geW91ciBlbnZpcm9ubWVudCwgCmhlcmUgaXMgaG93IHRvIGVyYXNlIHRoZW0uCmBgYHtyfQpybShhKSAgIyBkZWxldGUgdGhlIG9iamVjdCAnYScKcm0obGlzdCA9IGxzKCkpICAjIGNhdXRpb246IGRlbGV0ZSBhbGwgb2JqZWN0cyBpbiAuR2xvYmFsRW52CnJtKGxpc3Q9bHMoKSkgICMgcmVtb3ZlIGFsbCBvYmplY3RzIGluIHdvcmsgc3BhY2UKI2djKCkgICMgZnJlZSBzeXN0ZW0gbWVtb3J5CmBgYAoKIyMgQ2xhc3NlcyAmIERhdGEgdHlwZXMKCiMjIyBWYXJpYWJsZSBUeXBlcwooaHR0cHM6Ly93d3cudHV0b3JpYWxzcG9pbnQuY29tL3Ivcl9kYXRhX3R5cGVzLmh0bSkKCiMjIyMgY2hhcmFjdGVyClN0cmluZ3MKCiMjIyMgaW50ZWdlcgpJbnRlZ2VycwoKIyMjIyBudW1lcmljCkludGVnZXJzICsgRnJhY3Rpb25zCgojIyMjIGZhY3RvcgpDYXRlZ29yaWNhbCB2YXJpYWJsZSB3aGVyZSBlYWNoIGxldmVsIGlzIGEgY2F0ZWdvcnkKCiMjIyMgbG9naWNhbApCb29sZWFuIChlLmcgVFJVRS9GQUxTRSkKCiMjIyMgY29tcGxleApDb21wbGV4IG51bWJlcnMgKDMgKyAyaSkKCiMjIyMgcmF3ClN0b3JhZ2UgY29kZWQgKGUuZyAiSGVsbG8iIGlzIHN0b3JlZCBhcyA0ODY1NmM2YzZmKQoKYGBge3J9CmwgPC0gVFJVRQpsOyBjbGFzcyhsKQoKYSA8LSAzLjE0CmE7IHByaW50KGNsYXNzKGEpKQoKYiA8LSAnaGVsbG8gd29ybGQnCmIgOyBwcmludChjbGFzcyhiKSkKCmQgPC0gMkwKZCA7IGNsYXNzKGQpCiAgCm0gPC0gMis1aQptIDsgY2xhc3MobSkKCnYgPC0gY2hhclRvUmF3KCJsYXVyYSIpCnY7IGNsYXNzKHYpCmBgYAoKIyMjIERhdGEgVHlwZXMKVGhlcmUgYXJlIG1hbnkgdHlwZXMgb2YgUi1vYmplY3RzLiBUaGUgZnJlcXVlbnRseSB1c2VkIG9uZXMgYXJlOgoKIyMjIyBWZWN0b3IKSW4gUiBwcm9ncmFtbWluZywgdGhlIHZlcnkgYmFzaWMgZGF0YSB0eXBlcyBhcmUgdGhlIFItb2JqZWN0cyBjYWxsZWQgKnZlY3RvcnMqIHdoaWNoIGhvbGQgZWxlbWVudHMgb2YgKHNhbWUpIHZhcmlhYmxlIGNsYXNzZXMgb2YgbW9kZSAnbW9kZScuIFBsZWFzZSBub3RlIGluIFIgdGhlIG51bWJlciBvZiBjbGFzc2VzIGlzIG5vdCBjb25maW5lZCB0byBvbmx5IHRoZSBhYm92ZSBzaXggdHlwZXMsIGUuZyB3ZSBjYW4gdXNlIG1hbnkgYXRvbWljIHZlY3RvcnMgYW5kIGNyZWF0ZSBhbiBhcnJheSB3aG9zZSBjbGFzcyB3aWxsIGJlY29tZSBhcnJheS4KCiMjIyMjIFVzYWdlCnZlY3Rvcihtb2RlID0gImxvZ2ljYWwiLCBsZW5ndGggPSAwKQoKYXMudmVjdG9yKHgsIG1vZGUgPSAiYW55IikKCmlzLnZlY3Rvcih4LCBtb2RlID0gImFueSIpCgpgYGB7cn0KIyBDcmVhdGUgYSB2ZWN0b3IuCmFwcGxlIDwtIGMoJ3JlZCcsJ2dyZWVuJywieWVsbG93IikKcHJpbnQoYXBwbGUpOyBwcmludChjbGFzcyhhcHBsZSkpCmBgYAoKIyMjIyBNYXRyaXgKQSBtYXRyaXggaXMgYSB0d28tZGltZW5zaW9uYWwgcmVjdGFuZ3VsYXIgZGF0YSBzZXQgKG4gWCBtKS4gSXQgY2FuIGJlIGNyZWF0ZWQgdXNpbmcgYSB2ZWN0b3IgaW5wdXQgdG8gdGhlIG1hdHJpeCBmdW5jdGlvbi4gQWxsIGNvbHVtbnMgbXVzdCB1bmlmb3JtbHkgY29udGFpbiBvbmx5IG9uZSB2YXJpYWJsZSB0eXBlLgpgYGB7cn0KIyBDcmVhdGUgYSBtYXRyaXguCk0gPSBtYXRyaXgoIGMoJ2EnLCdhJywnYicsJ2MnLCdiJywnYScpLCBucm93ID0gMiwgbmNvbCA9IDMsIGJ5cm93ID0gVFJVRSkKcHJpbnQoTSk7IHByaW50KGNsYXNzKE0pKQpgYGBgCgojIyMjIEFycmF5CldoaWxlIG1hdHJpY2VzIGFyZSBjb25maW5lZCB0byB0d28gZGltZW5zaW9ucywgYXJyYXlzIGNhbiBiZSBvZiBhbnkgbnVtYmVyIG9mIGRpbWVuc2lvbnMuIFRoZSBhcnJheSBmdW5jdGlvbiB0YWtlcyBhIGRpbSBhdHRyaWJ1dGUgd2hpY2ggY3JlYXRlcyB0aGUgcmVxdWlyZWQgbnVtYmVyIG9mIGRpbWVuc2lvbi4gSW4gdGhlIGJlbG93IGV4YW1wbGUgd2UgY3JlYXRlIGFuIGFycmF5IHdpdGggdHdvIGVsZW1lbnRzIHdoaWNoIGFyZSAzeDMgbWF0cmljZXMgZWFjaC4gQSB0d28tZGltZW5zaW9uYWwgYXJyYXkgaXMgdGhlIHNhbWUgdGhpbmcgYXMgYSBtYXRyaXguIE9uZS1kaW1lbnNpb25hbCBhcnJheXMgb2Z0ZW4gbG9vayBsaWtlIHZlY3RvcnMsIGJ1dCBtYXkgYmUgaGFuZGxlZCBkaWZmZXJlbnRseSBieSBzb21lIGZ1bmN0aW9uczogc3RyIGRvZXMgZGlzdGluZ3Vpc2ggdGhlbSBpbiByZWNlbnQgdmVyc2lvbnMgb2YgUi4KCkFycmF5IHJldHVybnMgYW4gYXJyYXkgd2l0aCB0aGUgZXh0ZW50cyBzcGVjaWZpZWQgaW4gZGltIGFuZCBuYW1pbmcgaW5mb3JtYXRpb24gaW4gZGltbmFtZXMuIFRoZSB2YWx1ZXMgaW4gZGF0YSBhcmUgdGFrZW4gdG8gYmUgdGhvc2UgaW4gdGhlIGFycmF5IHdpdGggdGhlIGxlZnRtb3N0IHN1YnNjcmlwdCBtb3ZpbmcgZmFzdGVzdC4gSWYgdGhlcmUgYXJlIHRvbyBmZXcgZWxlbWVudHMgaW4gZGF0YSB0byBmaWxsIHRoZSBhcnJheSwgdGhlbiB0aGUgZWxlbWVudHMgaW4gZGF0YSBhcmUgcmVjeWNsZWQuIElmIGRhdGEgaGFzIGxlbmd0aCB6ZXJvLCBOQSBvZiBhbiBhcHByb3ByaWF0ZSB0eXBlIGlzIHVzZWQgZm9yIGF0b21pYyB2ZWN0b3JzICgwIGZvciByYXcgdmVjdG9ycykgYW5kIE5VTEwgZm9yIGxpc3RzLgoKVW5saWtlIG1hdHJpeCwgYXJyYXkgZG9lcyBub3QgY3VycmVudGx5IHJlbW92ZSBhbnkgYXR0cmlidXRlcyBsZWZ0IGJ5IGFzLnZlY3RvciBmcm9tIGEgY2xhc3NlZCBsaXN0IGRhdGEsIHNvIGNhbiByZXR1cm4gYSBsaXN0IGFycmF5IHdpdGggYSBjbGFzcyBhdHRyaWJ1dGUuCiMjIyMjIFVzYWdlID9hcnJheQpgYGB7cn0KYXJyYXkoZGF0YSA9IFt2ZWN0b3JdLCBkaW0gPSBsZW5ndGgoZGF0YSksIGRpbW5hbWVzID0gTlVMTCkKYXMuYXJyYXkoeCwgLi4uKQppcy5hcnJheSh4KQpgYGAKCiMjIyMjIEFyZ3VtZW50cwoqIGRhdGE6IGEgdmVjdG9yIChpbmNsdWRpbmcgYSBsaXN0IG9yIGV4cHJlc3Npb24gdmVjdG9yKSBnaXZpbmcgZGF0YSB0byBmaWxsIHRoZSBhcnJheS4gTm9uLWF0b21pYyBjbGFzc2VkIG9iamVjdHMgYXJlIGNvZXJjZWQgYnkgYXMudmVjdG9yLgoKKiBkaW06ICB0aGUgZGltIGF0dHJpYnV0ZSBmb3IgdGhlIGFycmF5IHRvIGJlIGNyZWF0ZWQsIHRoYXQgaXMgYW4gaW50ZWdlciB2ZWN0b3Igb2YgbGVuZ3RoIG9uZSBvciBtb3JlIGdpdmluZyB0aGUgbWF4aW1hbCBpbmRpY2VzIGluIGVhY2ggZGltZW5zaW9uLiAoZGltID0gbiAsIG0sIHopCgpgYGB7cn0KIyBDcmVhdGUgYSBsaXN0LgphcnJheTEgPC0gYXJyYXkoYygnZ3JlZW4nLCd5ZWxsb3cnKSwgZGltID0gYygzLDMsMikpCnByaW50KGFycmF5MSk7IHByaW50KGNsYXNzKGFycmF5MSkpCmBgYGAKCiMjIyMgRGF0YS5mcmFtZQpEYXRhIGZyYW1lcyBhcmUgdGFidWxhciBkYXRhIG9iamVjdHMgKG4gWCBtKS4gVW5saWtlIGEgbWF0cml4LCBpbiBkYXRhIGZyYW1lIGVhY2ggY29sdW1uIGNhbiBjb250YWluIGRpZmZlcmVudCBtb2RlcyBvZiBkYXRhLiBUaGUgZmlyc3QgY29sdW1uIGNhbiBiZSBudW1lcmljIHdoaWxlIHRoZSBzZWNvbmQgY29sdW1uIGNhbiBiZSBjaGFyYWN0ZXIgYW5kIHRoaXJkIGNvbHVtbiBjYW4gYmUgbG9naWNhbC4gSXQgaXMgYSBsaXN0IG9mIHZlY3RvcnMgb2YgZXF1YWwgbGVuZ3RoLgoKRGF0YSBGcmFtZXMgYXJlIGNyZWF0ZWQgdXNpbmcgdGhlIGRhdGEuZnJhbWUoKSBmdW5jdGlvbi4KYGBge3J9CiMgQ3JlYXRlIGEgZGF0YSBmcmFtZS4KQk1JIDwtIAlkYXRhLmZyYW1lKAogICBnZW5kZXIgPSBjKCJNYWxlIiwgIk1hbGUiLCJGZW1hbGUiKSwgCiAgIGhlaWdodCA9IGMoMTUyLCAxNzEuNSwgMTY1KSwgCiAgIHdlaWdodCA9IGMoODEsOTMsIDc4KSwKICAgQWdlID0gYyg0MiwzOCwyNikpCnByaW50KEJNSSk7IHByaW50KGNsYXNzKEJNSSkpCmBgYGAKCiMjIyMgTGlzdApBIGxpc3QgaXMgYW4gUi1vYmplY3Qgd2hpY2ggY2FuIGNvbnRhaW4gbWFueSBkaWZmZXJlbnQgdHlwZXMgb2YgZWxlbWVudHMgaW5zaWRlIGl0IGxpa2UgdmVjdG9ycywgZnVuY3Rpb25zIGFuZCBldmVuIGFub3RoZXIgbGlzdCBpbnNpZGUgaXQuIENhbiBob2xkIG9iamVjdHMgb2YgZGlmZmVyZW50IGNsYXNzZXMgYW5kIGxlbmd0aHMuCgpgYGB7cn0KIyBDcmVhdGUgYSBsaXN0LgpsaXN0MSA8LSBsaXN0KGMoMiw1LDMpLDIxLjMsc2luKQpwcmludChsaXN0MSk7IHByaW50KGNsYXNzKGxpc3QxKSkKYGBgYAoKIyMjIyBGYWN0b3IKRmFjdG9ycyBhcmUgdGhlIHItb2JqZWN0cyB3aGljaCBhcmUgY3JlYXRlZCB1c2luZyBhIHZlY3Rvci4gSXQgc3RvcmVzIHRoZSB2ZWN0b3IgYWxvbmcgd2l0aCB0aGUgZGlzdGluY3QgdmFsdWVzIG9mIHRoZSBlbGVtZW50cyBpbiB0aGUgdmVjdG9yIGFzIGxhYmVscy4gVGhlIGxhYmVscyBhcmUgYWx3YXlzIGNoYXJhY3RlciBpcnJlc3BlY3RpdmUgb2Ygd2hldGhlciBpdCBpcyBudW1lcmljIG9yIGNoYXJhY3RlciBvciBCb29sZWFuIGV0Yy4gaW4gdGhlIGlucHV0IHZlY3Rvci4gVGhleSBhcmUgdXNlZnVsIGluIHN0YXRpc3RpY2FsIG1vZGVsaW5nLiBGYWN0b3JzIGFyZSBjcmVhdGVkIHVzaW5nIHRoZSBmYWN0b3IoKSBmdW5jdGlvbi4gVGhlIG5sZXZlbHMgZnVuY3Rpb25zIGdpdmVzIHRoZSBjb3VudCBvZiBsZXZlbHMuCmBgYHtyfQojIENyZWF0ZSBhIGxpc3QuCmFwcGxlX2NvbG9ycyA8LSBjKCdncmVlbicsJ2dyZWVuJywneWVsbG93JywncmVkJywncmVkJywncmVkJywnZ3JlZW4nKQpmYWN0b3JfYXBwbGUgPC0gZmFjdG9yKGFwcGxlX2NvbG9ycykKcHJpbnQoZmFjdG9yX2FwcGxlKTsgcHJpbnQoY2xhc3MoZmFjdG9yX2FwcGxlKSkKYGBgYAoK</div>
+<div id="rmd-source-code">LS0tCnRpdGxlOiAiUiBFeGVyY2lzZXMiCm91dHB1dDogaHRtbF9ub3RlYm9vawotLS0KYGBge3J9CiMgc291cmNlOiBodHRwOi8vcnN0YXRpc3RpY3MubmV0LwpzZXR3ZCgiL1VzZXJzL2xhdXJpdGEvRG9jdW1lbnRzL0dpdEh1Yi9kc19tb29jcy9yX3Byb2dyYW1pbmcvIikKYGBgCgojIFIgVHV0b3JpYWwKVGhpcyB3b3Jrc2hlZXQgaXMgbWVhbnQgdG8gcmVmcmVzaCBSIGNvbmNlcHRzIGFuZCBwdXQgdGhlbSB0byBwcmFjdGljZSBpbiBhIG5lYXIgZnV0dXJlLiBUaGUgc291cmNlIG9mIHRoZSB0dXRvcmlhbCBpczogaHR0cDovL3JzdGF0aXN0aWNzLm5ldC9yLXR1dG9yaWFsLWV4ZXJjaXNlLWZvci1iZWdpbm5lcnMvCgojIyBFbnZpcm9ubWVudHMKVGhlIG91dGVybW9zdCBtYWluIGNvbnRhaW5lciBpcyBjYWxsZWQgdGhlIGdsb2JhbCBlbnZpcm9ubWVudCAoZ2xvYmFsZW52KCkpLiBUaGlzIGlzIHRoZSBkZWZhdWx0IHBsYWNlIHdpbGwgUiB3aWxsIHN0b3JlIGFsbCBvYmplY3RzIHRoYXQgeW91IGNyZWF0ZS4gWW91IGNhbiBwbGFjZSBhcyBtYW55IG9iamVjdHMgYXMgeW91ciBjb21wdXRlciBtZW1vcnkgd2lsbCBhbGxvdyBpdCB0byBob2xkLgoKYGBge3J9CmVudjEgPC0gbmV3LmVudigpICAjIGNyZWF0ZSBhIG5ldyBlbnZpcm9ubWVudAphc3NpZ24oImEiLCAzLCBlbnZpciA9IGVudjEpICAjIHN0b3JlIGE9MyBpbnNpZGUgZW52MQpscygpICAjIHJldHVybnMgb2JqZWN0cyBpbiAuR2xvYmFsRW52CmxzKGVudjEpICAjIHJldHVybnMgb2JqZWN0cyBpbiBlbnYxCmdldCgnYScsIGVudmlyPWVudjEpICAjIHJldHJpZXZlIHZhbHVlIGZyb20gZW52MQpgYGAKCk9uY2UgeW91IGtub3cgaG93IHRvIGluc2VydCBvYmplY3RzIGludG8geW91ciBlbnZpcm9ubWVudCwgCmhlcmUgaXMgaG93IHRvIGVyYXNlIHRoZW0uCmBgYHtyfQpybShhKSAgIyBkZWxldGUgdGhlIG9iamVjdCAnYScKcm0obGlzdCA9IGxzKCkpICAjIGNhdXRpb246IGRlbGV0ZSBhbGwgb2JqZWN0cyBpbiAuR2xvYmFsRW52CnJtKGxpc3Q9bHMoKSkgICMgcmVtb3ZlIGFsbCBvYmplY3RzIGluIHdvcmsgc3BhY2UKI2djKCkgICMgZnJlZSBzeXN0ZW0gbWVtb3J5CmBgYAoKIyMgQ2xhc3NlcyAmIERhdGEgdHlwZXMKCiMjIyBWYXJpYWJsZSBUeXBlcwooaHR0cHM6Ly93d3cudHV0b3JpYWxzcG9pbnQuY29tL3Ivcl9kYXRhX3R5cGVzLmh0bSkKCiMjIyMgMS4gY2hhcmFjdGVyClN0cmluZ3MKYHBhc3RlKClgCgpgYXBwZW5kKClgCgojIyMjIDIuIGludGVnZXIKSW50ZWdlcnMKCiMjIyMgMy4gbnVtZXJpYwpJbnRlZ2VycyArIEZyYWN0aW9ucwoKIyMjIyA0LiBmYWN0b3IKQ2F0ZWdvcmljYWwgdmFyaWFibGUgd2hlcmUgZWFjaCBsZXZlbCBpcyBhIGNhdGVnb3J5CgojIyMjIDUuIGxvZ2ljYWwKQm9vbGVhbiAoZS5nIFRSVUUvRkFMU0UpCgojIyMjIDYuIGNvbXBsZXgKQ29tcGxleCBudW1iZXJzICgzICsgMmkpCgojIyMjIDcuIHJhdwpTdG9yYWdlIGNvZGVkIChlLmcgIkhlbGxvIiBpcyBzdG9yZWQgYXMgNDg2NTZjNmM2ZikKCmBgYHtyfQpsIDwtIFRSVUUKbDsgY2xhc3MobCkKCmEgPC0gMy4xNAphOyBwcmludChjbGFzcyhhKSkKCmIgPC0gJ2hlbGxvIHdvcmxkJwpiIDsgcHJpbnQoY2xhc3MoYikpCgpkIDwtIDJMCmQgOyBjbGFzcyhkKQogIAptIDwtIDIrNWkKbSA7IGNsYXNzKG0pCgp2IDwtIGNoYXJUb1JhdygibGF1cmEiKQp2OyBjbGFzcyh2KQpgYGAKCiMjIyBEYXRhIFR5cGVzClRoZXJlIGFyZSBtYW55IHR5cGVzIG9mIFItb2JqZWN0cy4gVGhlIGZyZXF1ZW50bHkgdXNlZCBvbmVzIGFyZToKCiMjIyMgMS4gVmVjdG9yCihodHRwOi8vd3d3LnItdHV0b3IuY29tL3ItaW50cm9kdWN0aW9uL3ZlY3Rvci92ZWN0b3ItYXJpdGhtZXRpY3MpCkluIFIgcHJvZ3JhbW1pbmcsIHRoZSB2ZXJ5IGJhc2ljIGRhdGEgdHlwZXMgYXJlIHRoZSBSLW9iamVjdHMgY2FsbGVkICp2ZWN0b3JzKiB3aGljaCBob2xkIGVsZW1lbnRzIG9mIChzYW1lKSB2YXJpYWJsZSBjbGFzc2VzIG9mIG1vZGUgJ21vZGUnLiBQbGVhc2Ugbm90ZSBpbiBSIHRoZSBudW1iZXIgb2YgY2xhc3NlcyBpcyBub3QgY29uZmluZWQgdG8gb25seSB0aGUgYWJvdmUgc2l4IHR5cGVzLCBlLmcgd2UgY2FuIHVzZSBtYW55IGF0b21pYyB2ZWN0b3JzIGFuZCBjcmVhdGUgYW4gYXJyYXkgd2hvc2UgY2xhc3Mgd2lsbCBiZWNvbWUgYXJyYXkuCgojIyMjIyBVc2FnZQpgdmVjdG9yKG1vZGUgPSAibG9naWNhbCIsIGxlbmd0aCA9IDApYAoKYGFzLnZlY3Rvcih4LCBtb2RlID0gImFueSIpYAoKYGlzLnZlY3Rvcih4LCBtb2RlID0gImFueSIpYAoKYGBge3J9CiMgQ3JlYXRlIGEgdmVjdG9yLgphcHBsZSA8LSBjKCdyZWQnLCdncmVlbicsInllbGxvdyIpCnByaW50KGFwcGxlKTsgcHJpbnQoY2xhc3MoYXBwbGUpKQpgYGAKCiMjIyMjIE1hbmlwdWxhdGluZyBWZWN0b3JzCiMjIyMjIyBTdWJzZXR0aW5nCmBgYHtyfQphcHBsZQoKYXBwbGUyIDwtIGFwcGxlWzI6M107ICMgZWxlbWVudHMgaW4gMiwzIHBvc2l0aW9uCmFwcGxlMgoKYXBwbGUzIDwtIGFwcGxlW2MoMSwzKV0gIyBlbGVtZW50cyBpbiAxLDMgcG9zaXRpb24gCmFwcGxlMwoKYXBwbGU0IDwtIGFwcGxlWy0xXSAjIGFsbCBlbGVtZW50cyBleGNlcHQgMSBwb3NpdGlvbgphcHBsZTQKYGBgCgojIyMjIyMgU29ydGluZwpgYGB7cn0Kc29ydChhcHBsZSkgI2FzY2VuZGluZyBzb3J0CnNvcnQoYXBwbGUsIGRlY3JlYXNpbmcgPSBUUlVFKSAjZGVzY2VuZGluZyBzb3J0CgphcHBsZVtvcmRlcihhcHBsZSldICNhc2NlbmRpbmcgc29ydAphcHBsZVtyZXYob3JkZXIoYXBwbGUpKV0gICNkZXNjZW5kaW5nIHNvcnQKYGBgCgojIyMjIyMgU2FtcGxpbmcgYW5kIE1pc3NpbmcgVmFsdWVzCmBgYHtyfQphcHBsZSA8LSBhcHBlbmQoYXBwbGUsIE5BKQphcHBsZTUgPC0gYXBwbGVbIWlzLm5hKGFwcGxlKV0KYXBwbGU1CmBgYApgYGB7cn0KYXBwbGUKc2FtcGxlKGFwcGxlKSAgIyBzYW1wbGUgYWxsIGVsZW1lbnRzIHJhbmRvbWx5CnNldC5zZWVkKDUwKSAjIG9wdGlvbmFsLiBzZXQgaXQgdG8gZ2V0IHNhbWUgcmFuZG9tIHNhbXBsZXMuCnNhbXBsZShhcHBsZSwgMikgICMgc2FtcGxlIDMgZWxlbSB3aXRob3V0IHJlcGxhY2VtZW50CmFwcGxlMgpzYW1wbGUoYXBwbGUyLCAzLCByZXBsYWNlPVQpICAjIHNhbXBsZSB3aXRoIHJlcGxhY2VtZW50CmBgYAoKIyMjIyAyLiBNYXRyaXgKQSBtYXRyaXggaXMgYSB0d28tZGltZW5zaW9uYWwgcmVjdGFuZ3VsYXIgZGF0YSBzZXQgKG4gWCBtKS4gSXQgY2FuIGJlIGNyZWF0ZWQgdXNpbmcgYSB2ZWN0b3IgaW5wdXQgdG8gdGhlIG1hdHJpeCBmdW5jdGlvbi4gQWxsIGNvbHVtbnMgbXVzdCB1bmlmb3JtbHkgY29udGFpbiBvbmx5IG9uZSB2YXJpYWJsZSB0eXBlLgpgYGB7cn0KIyBDcmVhdGUgYSBtYXRyaXguCk0gPSBtYXRyaXgoIGMoJ2EnLCdhJywnYicsJ2MnLCdiJywnYScpLCBucm93ID0gMiwgbmNvbCA9IDMsIGJ5cm93ID0gVFJVRSkKcHJpbnQoTSk7IHByaW50KGNsYXNzKE0pKQpgYGBgCgojIyMjIDMuIEFycmF5CldoaWxlIG1hdHJpY2VzIGFyZSBjb25maW5lZCB0byB0d28gZGltZW5zaW9ucywgYXJyYXlzIGNhbiBiZSBvZiBhbnkgbnVtYmVyIG9mIGRpbWVuc2lvbnMuIFRoZSBhcnJheSBmdW5jdGlvbiB0YWtlcyBhIGRpbSBhdHRyaWJ1dGUgd2hpY2ggY3JlYXRlcyB0aGUgcmVxdWlyZWQgbnVtYmVyIG9mIGRpbWVuc2lvbi4gSW4gdGhlIGJlbG93IGV4YW1wbGUgd2UgY3JlYXRlIGFuIGFycmF5IHdpdGggdHdvIGVsZW1lbnRzIHdoaWNoIGFyZSAzeDMgbWF0cmljZXMgZWFjaC4gQSB0d28tZGltZW5zaW9uYWwgYXJyYXkgaXMgdGhlIHNhbWUgdGhpbmcgYXMgYSBtYXRyaXguIE9uZS1kaW1lbnNpb25hbCBhcnJheXMgb2Z0ZW4gbG9vayBsaWtlIHZlY3RvcnMsIGJ1dCBtYXkgYmUgaGFuZGxlZCBkaWZmZXJlbnRseSBieSBzb21lIGZ1bmN0aW9uczogc3RyIGRvZXMgZGlzdGluZ3Vpc2ggdGhlbSBpbiByZWNlbnQgdmVyc2lvbnMgb2YgUi4KCkFycmF5IHJldHVybnMgYW4gYXJyYXkgd2l0aCB0aGUgZXh0ZW50cyBzcGVjaWZpZWQgaW4gZGltIGFuZCBuYW1pbmcgaW5mb3JtYXRpb24gaW4gZGltbmFtZXMuIFRoZSB2YWx1ZXMgaW4gZGF0YSBhcmUgdGFrZW4gdG8gYmUgdGhvc2UgaW4gdGhlIGFycmF5IHdpdGggdGhlIGxlZnRtb3N0IHN1YnNjcmlwdCBtb3ZpbmcgZmFzdGVzdC4gSWYgdGhlcmUgYXJlIHRvbyBmZXcgZWxlbWVudHMgaW4gZGF0YSB0byBmaWxsIHRoZSBhcnJheSwgdGhlbiB0aGUgZWxlbWVudHMgaW4gZGF0YSBhcmUgcmVjeWNsZWQuIElmIGRhdGEgaGFzIGxlbmd0aCB6ZXJvLCBOQSBvZiBhbiBhcHByb3ByaWF0ZSB0eXBlIGlzIHVzZWQgZm9yIGF0b21pYyB2ZWN0b3JzICgwIGZvciByYXcgdmVjdG9ycykgYW5kIE5VTEwgZm9yIGxpc3RzLgoKVW5saWtlIG1hdHJpeCwgYXJyYXkgZG9lcyBub3QgY3VycmVudGx5IHJlbW92ZSBhbnkgYXR0cmlidXRlcyBsZWZ0IGJ5IGFzLnZlY3RvciBmcm9tIGEgY2xhc3NlZCBsaXN0IGRhdGEsIHNvIGNhbiByZXR1cm4gYSBsaXN0IGFycmF5IHdpdGggYSBjbGFzcyBhdHRyaWJ1dGUuCgojIyMjIyBVc2FnZSAoP2FycmF5KQpgYXJyYXkoZGF0YSA9IFt2ZWN0b3JdLCBkaW0gPSBsZW5ndGgoZGF0YSksIGRpbW5hbWVzID0gTlVMTClgCgpgYXMuYXJyYXkoeCwgLi4uKWAKCmBpcy5hcnJheSh4KWAKCiMjIyMjIEFyZ3VtZW50cwoqIGRhdGE6IGEgdmVjdG9yIChpbmNsdWRpbmcgYSBsaXN0IG9yIGV4cHJlc3Npb24gdmVjdG9yKSBnaXZpbmcgZGF0YSB0byBmaWxsIHRoZSBhcnJheS4gTm9uLWF0b21pYyBjbGFzc2VkIG9iamVjdHMgYXJlIGNvZXJjZWQgYnkgYXMudmVjdG9yLgoKKiBkaW06ICB0aGUgZGltIGF0dHJpYnV0ZSBmb3IgdGhlIGFycmF5IHRvIGJlIGNyZWF0ZWQsIHRoYXQgaXMgYW4gaW50ZWdlciB2ZWN0b3Igb2YgbGVuZ3RoIG9uZSBvciBtb3JlIGdpdmluZyB0aGUgbWF4aW1hbCBpbmRpY2VzIGluIGVhY2ggZGltZW5zaW9uLiAoZGltID0gbiAsIG0sIHopCgpgYGB7cn0KIyBDcmVhdGUgYSBsaXN0LgphcnJheTEgPC0gYXJyYXkoYygnZ3JlZW4nLCd5ZWxsb3cnKSwgZGltID0gYygzLDMsMikpCnByaW50KGFycmF5MSk7IHByaW50KGNsYXNzKGFycmF5MSkpCmBgYGAKCiMjIyMgNC4gRGF0YS5mcmFtZQpEYXRhIGZyYW1lcyBhcmUgdGFidWxhciBkYXRhIG9iamVjdHMgKG4gWCBtKS4gVW5saWtlIGEgbWF0cml4LCBpbiBkYXRhIGZyYW1lIGVhY2ggY29sdW1uIGNhbiBjb250YWluIGRpZmZlcmVudCBtb2RlcyBvZiBkYXRhLiBUaGUgZmlyc3QgY29sdW1uIGNhbiBiZSBudW1lcmljIHdoaWxlIHRoZSBzZWNvbmQgY29sdW1uIGNhbiBiZSBjaGFyYWN0ZXIgYW5kIHRoaXJkIGNvbHVtbiBjYW4gYmUgbG9naWNhbC4gSXQgaXMgYSBsaXN0IG9mIHZlY3RvcnMgb2YgZXF1YWwgbGVuZ3RoLgoKRGF0YSBGcmFtZXMgYXJlIGNyZWF0ZWQgdXNpbmcgdGhlIGRhdGEuZnJhbWUoKSBmdW5jdGlvbi4KYGBge3J9CiMgQ3JlYXRlIGEgZGF0YSBmcmFtZS4KQk1JIDwtIAlkYXRhLmZyYW1lKAogICBnZW5kZXIgPSBjKCJNYWxlIiwgIk1hbGUiLCJGZW1hbGUiKSwgCiAgIGhlaWdodCA9IGMoMTUyLCAxNzEuNSwgMTY1KSwgCiAgIHdlaWdodCA9IGMoODEsOTMsIDc4KSwKICAgQWdlID0gYyg0MiwzOCwyNikpCnByaW50KEJNSSk7IHByaW50KGNsYXNzKEJNSSkpCmBgYGAKCiMjIyMgNS4gTGlzdApBIGxpc3QgaXMgYW4gUi1vYmplY3Qgd2hpY2ggY2FuIGNvbnRhaW4gbWFueSBkaWZmZXJlbnQgdHlwZXMgb2YgZWxlbWVudHMgaW5zaWRlIGl0IGxpa2UgdmVjdG9ycywgZnVuY3Rpb25zIGFuZCBldmVuIGFub3RoZXIgbGlzdCBpbnNpZGUgaXQuIEEgTGlzdCBjYW4gaG9sZCBvYmplY3RzIG9mIGRpZmZlcmVudCBjbGFzc2VzIGFuZCBsZW5ndGhzIGFuZCBpdCBmdW5jdGlvbnMgdG8gY29uc3RydWN0LCBjb2VyY2UgYW5kIGNoZWNrIGZvciBib3RoIGtpbmRzIG9mIFIgbGlzdHMuCgpBbG1vc3QgYWxsIGxpc3RzIGluIFIgaW50ZXJuYWxseSBhcmUgR2VuZXJpYyBWZWN0b3JzLCB3aGVyZWFzIHRyYWRpdGlvbmFsIGRvdHRlZCBwYWlyIGxpc3RzIChhcyBpbiBMSVNQKSByZW1haW4gYXZhaWxhYmxlIGJ1dCByYXJlbHkgc2VlbiBieSB1c2VycyAoZXhjZXB0IGFzIGZvcm1hbHMgb2YgZnVuY3Rpb25zKS4KClRoZSBhcmd1bWVudHMgdG8gbGlzdCBvciBwYWlybGlzdCBhcmUgb2YgdGhlIGZvcm0gdmFsdWUgb3IgdGFnID0gdmFsdWUuIFRoZSBmdW5jdGlvbnMgcmV0dXJuIGEgbGlzdCBvciBkb3R0ZWQgcGFpciBsaXN0IGNvbXBvc2VkIG9mIGl0cyBhcmd1bWVudHMgd2l0aCBlYWNoIHZhbHVlIGVpdGhlciB0YWdnZWQgb3IgdW50YWdnZWQsIGRlcGVuZGluZyBvbiBob3cgdGhlIGFyZ3VtZW50IHdhcyBzcGVjaWZpZWQuIAoKVGhlICJlbnZpcm9ubWVudCIgbWV0aG9kIGZvciBhcy5saXN0IGNvcGllcyB0aGUgbmFtZS12YWx1ZSBwYWlycyAoZm9yIG5hbWVzIG5vdCBiZWdpbm5pbmcgd2l0aCBhIGRvdCkgZnJvbSBhbiBlbnZpcm9ubWVudCB0byBhIG5hbWVkIGxpc3QuIFRoZSB1c2VyIGNhbiByZXF1ZXN0IHRoYXQgYWxsIG5hbWVkIG9iamVjdHMgYXJlIGNvcGllZC4gVW5sZXNzIHNvcnRlZCA9IFRSVUUsIHRoZSBsaXN0IGlzIGluIG5vIHBhcnRpY3VsYXIgb3JkZXIgKHRoZSBvcmRlciBkZXBlbmRzIG9uIHRoZSBvcmRlciBvZiBjcmVhdGlvbiBvZiBvYmplY3RzIGFuZCB3aGV0aGVyIHRoZSBlbnZpcm9ubWVudCBpcyBoYXNoZWQpLiBObyBlbmNsb3NpbmcgZW52aXJvbm1lbnRzIGFyZSBzZWFyY2hlZC4gKE9iamVjdHMgY29waWVkIGFyZSBkdXBsaWNhdGVkIHNvIHRoaXMgY2FuIGJlIGFuIGV4cGVuc2l2ZSBvcGVyYXRpb24uKSBOb3RlIHRoYXQgdGhlcmUgaXMgYW4gaW52ZXJzZSBvcGVyYXRpb24sIHRoZSBhcy5lbnZpcm9ubWVudCgpIG1ldGhvZCBmb3IgbGlzdCBvYmplY3RzLgoKIyMjIyMgVXNhZ2UKYGxpc3QoLi4uKWAsIGBwYWlybGlzdCguLi4pYCwgYGFzLmxpc3QoeCwgLi4uKWAsIGBhbGlzdCguLi4pYAoKYGFzLmxpc3QoeCwgYWxsLm5hbWVzID0gRkFMU0UsIHNvcnRlZCA9IEZBTFNFLCAuLi4pYAoKYHg6IG9iamVjdCB0byB0aGUgY29lcmNlZCBvciB0ZXN0ZWRgCgpgYGB7cn0KIyBDcmVhdGUgYSBsaXN0LgpsaXN0MSA8LSBsaXN0KGMoMiw1LDMpLCAyMS4zLCBzaW4pCnByaW50KGxpc3QxKTsgcHJpbnQoY2xhc3MobGlzdDEpKQpgYGBgCgojIyMjIFVubGlzdCAKW2A/dW5saXN0YF0KR2l2ZW4gYSBsaXN0IHN0cnVjdHVyZSB4LCB1bmxpc3Qgc2ltcGxpZmllcyBpdCB0byBwcm9kdWNlIGEgdmVjdG9yIHdoaWNoIGNvbnRhaW5zIGFsbCB0aGUgYXRvbWljIGNvbXBvbmVudHMgd2hpY2ggb2NjdXIgaW4geC4KCmBgYHtyfQpsaXN0MiA8LSB1bmxpc3QobGlzdDEsIHJlY3Vyc2l2ZSA9IEZBTFNFKQpsaXN0MjsgcHJpbnQoY2xhc3MobGlzdDIpKQpgYGAKCiMjIyMgNi4gRmFjdG9yCkZhY3RvcnMgYXJlIHRoZSByLW9iamVjdHMgd2hpY2ggYXJlIGNyZWF0ZWQgdXNpbmcgYSB2ZWN0b3IuIEl0IHN0b3JlcyB0aGUgdmVjdG9yIGFsb25nIHdpdGggdGhlIGRpc3RpbmN0IHZhbHVlcyBvZiB0aGUgZWxlbWVudHMgaW4gdGhlIHZlY3RvciBhcyBsYWJlbHMuIFRoZSBsYWJlbHMgYXJlIGFsd2F5cyBjaGFyYWN0ZXIgaXJyZXNwZWN0aXZlIG9mIHdoZXRoZXIgaXQgaXMgbnVtZXJpYyBvciBjaGFyYWN0ZXIgb3IgQm9vbGVhbiBldGMuIGluIHRoZSBpbnB1dCB2ZWN0b3IuIFRoZXkgYXJlIHVzZWZ1bCBpbiBzdGF0aXN0aWNhbCBtb2RlbGluZy4gRmFjdG9ycyBhcmUgY3JlYXRlZCB1c2luZyB0aGUgZmFjdG9yKCkgZnVuY3Rpb24uIFRoZSBubGV2ZWxzIGZ1bmN0aW9ucyBnaXZlcyB0aGUgY291bnQgb2YgbGV2ZWxzLgoKYGBge3J9CiMgQ3JlYXRlIGEgbGlzdC4KYXBwbGVfY29sb3JzIDwtIGMoJ2dyZWVuJywnZ3JlZW4nLCd5ZWxsb3cnLCdyZWQnLCdyZWQnLCdyZWQnLCdncmVlbicpCmZhY3Rvcl9hcHBsZSA8LSBmYWN0b3IoYXBwbGVfY29sb3JzKQpwcmludChmYWN0b3JfYXBwbGUpOyBwcmludChjbGFzcyhmYWN0b3JfYXBwbGUpKQpgYGBgCgojIyMjIDcuIERhdGVzCihodHRwczovL3d3dy5zdGF0LmJlcmtlbGV5LmVkdS9+czEzMy9kYXRlcy5odG1sKQoKYGBge3J9CmRhdGVTdHJpbmcgPC0gIjE1LzA2LzIwMTQiCiMgIkRhdGUiCm15RGF0ZSA8LSBhcy5EYXRlKGRhdGVTdHJpbmcsIGZvcm1hdD0iJWQvJW0vJVkiKQpteURhdGU7IHByaW50KGNsYXNzKG15RGF0ZSkpICAKCiMgIlBPU0lYbHQiICJQT1NJWHQiCm15UE9TSVhsdERhdGUxIDwtIGFzLlBPU0lYbHQobXlEYXRlKTsgCm15UE9TSVhsdERhdGUxOyBwcmludChjbGFzcyhteVBPU0lYbHREYXRlMSkpCgojICJQT1NJWGN0IiAiUE9TSVh0IiAKbXlQT1NJWGN0RGF0ZTIgPC0gYXMuUE9TSVhjdChteURhdGUpOyAKbXlQT1NJWGN0RGF0ZTI7IHByaW50KGNsYXNzKG15UE9TSVhjdERhdGUyKSkKYGBgCgojIyMgQ29udmVydGluZyBEYXRhIFR5cGVzCgojIyMjIERhdGEuRnJhbWUgCiMjIyMgTWF0cml4CiMjIyMgTGlzdAojIyMjIEZhY3RvcnMKCiMjIyBWaWV3aW5nIE9iamVjdHMKYGBge3J9CmF0dHJpYnV0ZXMobXlQT1NJWGx0RGF0ZTEpICNhdHRyaWJ1dGVzIAojdW5jbGFzcyhteVBPU0lYbHREYXRlMSkgICMgd29ya3MhCiNuYW1lcyhteVBPU0lYbHREYXRlKSAgIyBkb2Vzbid0IHdvcmsgb24gYSBQT1NJWGx0IG9iamVjdAp1bmxpc3QobXlQT1NJWGx0RGF0ZTEpICAjIHdvcmtzIQpgYGAKCgo=</div>
 
 
 
