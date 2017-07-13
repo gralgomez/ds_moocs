@@ -587,20 +587,35 @@ print(factor_apple); print(class(factor_apple))</code></pre>
 <p>(<a href="https://www.stat.berkeley.edu/~s133/dates.html" class="uri">https://www.stat.berkeley.edu/~s133/dates.html</a>)</p>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuZGF0ZVN0cmluZyA8LSBcIjE1LzA2LzIwMTRcIlxuIyBcIkRhdGVcIlxubXlEYXRlIDwtIGFzLkRhdGUoZGF0ZVN0cmluZywgZm9ybWF0PVwiJWQvJW0vJVlcIilcbm15RGF0ZTsgcHJpbnQoY2xhc3MobXlEYXRlKSkgIFxuXG4jIFwiUE9TSVhsdFwiIFwiUE9TSVh0XCJcbm15UE9TSVhsdERhdGUxIDwtIGFzLlBPU0lYbHQobXlEYXRlKTsgXG5teVBPU0lYbHREYXRlMTsgcHJpbnQoY2xhc3MobXlQT1NJWGx0RGF0ZTEpKVxuXG4jIFwiUE9TSVhjdFwiIFwiUE9TSVh0XCIgXG5teVBPU0lYY3REYXRlMiA8LSBhcy5QT1NJWGN0KG15RGF0ZSk7IFxubXlQT1NJWGN0RGF0ZTI7IHByaW50KGNsYXNzKG15UE9TSVhjdERhdGUyKSlcbmBgYCJ9 -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuZGF0ZVN0cmluZyA8LSBcIjE1LzA2LzIwMTRcIlxuIyBcIkRhdGVcIlxubXlEYXRlIDwtIGFzLkRhdGUoZGF0ZVN0cmluZywgZm9ybWF0PVwiJWQvJW0vJVlcIilcbm15RGF0ZTsgcHJpbnQoY2xhc3MobXlEYXRlKSkgIFxuXG5gYGAifQ== -->
 <pre class="r"><code>dateString &lt;- &quot;15/06/2014&quot;
 # &quot;Date&quot;
 myDate &lt;- as.Date(dateString, format=&quot;%d/%m/%Y&quot;)
 myDate; print(class(myDate))  
-
-# &quot;POSIXlt&quot; &quot;POSIXt&quot;
+</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiWzFdIFwiMjAxNC0wNi0xNVwiXG5bMV0gXCJEYXRlXCJcbiJ9 -->
+<pre><code>[1] &quot;2014-06-15&quot;
+[1] &quot;Date&quot;</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuIyBcIlBPU0lYbHRcIiBcIlBPU0lYdFwiXG5teVBPU0lYbHREYXRlMSA8LSBhcy5QT1NJWGx0KG15RGF0ZSk7IFxubXlQT1NJWGx0RGF0ZTE7IHByaW50KGNsYXNzKG15UE9TSVhsdERhdGUxKSlcbmBgYCJ9 -->
+<pre class="r"><code># &quot;POSIXlt&quot; &quot;POSIXt&quot;
 myPOSIXltDate1 &lt;- as.POSIXlt(myDate); 
-myPOSIXltDate1; print(class(myPOSIXltDate1))
-
-# &quot;POSIXct&quot; &quot;POSIXt&quot; 
+myPOSIXltDate1; print(class(myPOSIXltDate1))</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiWzFdIFwiMjAxNC0wNi0xNSBVVENcIlxuWzFdIFwiUE9TSVhsdFwiIFwiUE9TSVh0XCIgXG4ifQ== -->
+<pre><code>[1] &quot;2014-06-15 UTC&quot;
+[1] &quot;POSIXlt&quot; &quot;POSIXt&quot; </code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuIyBcIlBPU0lYY3RcIiBcIlBPU0lYdFwiIFxubXlQT1NJWGN0RGF0ZTIgPC0gYXMuUE9TSVhjdChteURhdGUpOyBcbm15UE9TSVhjdERhdGUyOyBwcmludChjbGFzcyhteVBPU0lYY3REYXRlMikpXG5gYGAifQ== -->
+<pre class="r"><code># &quot;POSIXct&quot; &quot;POSIXt&quot; 
 myPOSIXctDate2 &lt;- as.POSIXct(myDate); 
 myPOSIXctDate2; print(class(myPOSIXctDate2))</code></pre>
 <!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiWzFdIFwiMjAxNC0wNi0xNCAyMDowMDowMCBFRFRcIlxuWzFdIFwiUE9TSVhjdFwiIFwiUE9TSVh0XCIgXG4ifQ== -->
+<pre><code>[1] &quot;2014-06-14 20:00:00 EDT&quot;
+[1] &quot;POSIXct&quot; &quot;POSIXt&quot; </code></pre>
+<!-- rnb-output-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
 </div>
@@ -624,12 +639,30 @@ myPOSIXctDate2; print(class(myPOSIXctDate2))</code></pre>
 <h3>Viewing Objects</h3>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuYXR0cmlidXRlcyhteVBPU0lYbHREYXRlMSkgI2F0dHJpYnV0ZXMgXG4jdW5jbGFzcyhteVBPU0lYbHREYXRlMSkgICMgd29ya3MhXG4jbmFtZXMobXlQT1NJWGx0RGF0ZSkgICMgZG9lc24ndCB3b3JrIG9uIGEgUE9TSVhsdCBvYmplY3RcbnVubGlzdChteVBPU0lYbHREYXRlMSkgICMgd29ya3MhXG5gYGAifQ== -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuYXR0cmlidXRlcyhteVBPU0lYbHREYXRlMSkgI2F0dHJpYnV0ZXMgXG5cbmBgYCJ9 -->
 <pre class="r"><code>attributes(myPOSIXltDate1) #attributes 
-#unclass(myPOSIXltDate1)  # works!
+</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiJG5hbWVzXG5bMV0gXCJzZWNcIiAgIFwibWluXCIgICBcImhvdXJcIiAgXCJtZGF5XCIgIFwibW9uXCIgICBcInllYXJcIiAgXCJ3ZGF5XCIgIFwieWRheVwiIFxuWzldIFwiaXNkc3RcIlxuXG4kY2xhc3NcblsxXSBcIlBPU0lYbHRcIiBcIlBPU0lYdFwiIFxuXG4kdHpvbmVcblsxXSBcIlVUQ1wiXG4ifQ== -->
+<pre><code>$names
+[1] &quot;sec&quot;   &quot;min&quot;   &quot;hour&quot;  &quot;mday&quot;  &quot;mon&quot;   &quot;year&quot;  &quot;wday&quot;  &quot;yday&quot; 
+[9] &quot;isdst&quot;
+
+$class
+[1] &quot;POSIXlt&quot; &quot;POSIXt&quot; 
+
+$tzone
+[1] &quot;UTC&quot;</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuI3VuY2xhc3MobXlQT1NJWGx0RGF0ZTEpICAjIHdvcmtzIVxuI25hbWVzKG15UE9TSVhsdERhdGUpICAjIGRvZXNuJ3Qgd29yayBvbiBhIFBPU0lYbHQgb2JqZWN0XG51bmxpc3QobXlQT1NJWGx0RGF0ZTEpICAjIHdvcmtzIVxuYGBgIn0= -->
+<pre class="r"><code>#unclass(myPOSIXltDate1)  # works!
 #names(myPOSIXltDate)  # doesn't work on a POSIXlt object
 unlist(myPOSIXltDate1)  # works!</code></pre>
 <!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiICBzZWMgICBtaW4gIGhvdXIgIG1kYXkgICBtb24gIHllYXIgIHdkYXkgIHlkYXkgaXNkc3QgXG4gICAgMCAgICAgMCAgICAgMCAgICAxNSAgICAgNSAgIDExNCAgICAgMCAgIDE2NSAgICAgMCBcbiJ9 -->
+<pre><code>  sec   min  hour  mday   mon  year  wday  yday isdst 
+    0     0     0    15     5   114     0   165     0 </code></pre>
+<!-- rnb-output-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
 <!-- rnb-text-end -->
