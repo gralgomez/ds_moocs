@@ -269,3 +269,4 @@ http://rstudio.github.io/shiny/tutorial/#shiny-text
 
 ### R Server
 https://www.rstudio.com/products/rstudio/download-server/
+https://iangow.wordpress.com/2013/05/01/rstudio-server-on-mac-os-x/
