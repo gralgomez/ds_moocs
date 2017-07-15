@@ -267,7 +267,6 @@ http://rstatistics.net/
 
 ### Books
 * Advanced R (Hadley Wickham)
-
 http://adv-r.had.co.nz/
 
 ### Shiny
