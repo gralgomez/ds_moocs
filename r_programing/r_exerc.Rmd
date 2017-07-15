@@ -260,9 +260,15 @@ unlist(myPOSIXltDate1)  # works!
 ```
 
 ## R Links
+
 ### [R]epository
 https://www.rdocumentation.org/
 http://rstatistics.net/
+
+### Books
+* Advanced R (Hadley Wickham)
+
+http://adv-r.had.co.nz/
 
 ### Shiny
 http://rstudio.github.io/shiny/tutorial/#shiny-text
