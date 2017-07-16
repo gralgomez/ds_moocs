@@ -273,6 +273,10 @@ http://adv-r.had.co.nz/
 http://rstudio.github.io/shiny/tutorial/#shiny-text
 
 ### R Server
+`sudo rstudio-server start`
+
 https://www.rstudio.com/products/rstudio/download-server/
+
 https://iangow.wordpress.com/2013/05/01/rstudio-server-on-mac-os-x/
+
 https://www.r-bloggers.com/rstudio-server-on-os-x-sierra/
