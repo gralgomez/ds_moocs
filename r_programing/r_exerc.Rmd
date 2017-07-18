@@ -284,6 +284,9 @@ https://www.r-bloggers.com/rstudio-server-on-os-x-sierra/
 ### R Profiling (Advanced R - H.Wickham)
 http://adv-r.had.co.nz/Profiling.html
 
+### Data Mining (R)
+http://www.rdatamining.com/
+
 ## Datasets
 http://www.datasciencecentral.com/profiles/blogs/big-data-sets-available-for-free
 
