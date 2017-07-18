@@ -290,3 +290,7 @@ http://www.datasciencecentral.com/profiles/blogs/big-data-sets-available-for-fre
 ## Other
 https://www.dataquest.io/blog/build-a-data-science-portfolio/
 Computational Finance - http://computationalfinance.lsi.upc.edu/
+
+# Use Cases
+https://sites.google.com/site/predictingstockmovement/video
+http://computationalfinance.lsi.upc.edu/wp-content/uploads/2014/09/AArratiaForecastingFTS2014_ho.pdf
