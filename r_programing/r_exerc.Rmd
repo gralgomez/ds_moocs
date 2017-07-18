@@ -280,3 +280,9 @@ https://www.rstudio.com/products/rstudio/download-server/
 https://iangow.wordpress.com/2013/05/01/rstudio-server-on-mac-os-x/
 
 https://www.r-bloggers.com/rstudio-server-on-os-x-sierra/
+
+## Datasets
+http://www.datasciencecentral.com/profiles/blogs/big-data-sets-available-for-free
+
+## Other
+https://www.dataquest.io/blog/build-a-data-science-portfolio/
