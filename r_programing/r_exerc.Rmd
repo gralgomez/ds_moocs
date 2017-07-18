@@ -288,8 +288,9 @@ http://adv-r.had.co.nz/Profiling.html
 http://www.datasciencecentral.com/profiles/blogs/big-data-sets-available-for-free
 
 ## Other
-https://www.dataquest.io/blog/build-a-data-science-portfolio/
+DS Portfolio - https://www.dataquest.io/blog/build-a-data-science-portfolio/
 Computational Finance - http://computationalfinance.lsi.upc.edu/
+DS Paths - https://www.quora.com/How-can-I-become-a-data-scientist-1?redirected_qid=3799382
 
 # Use Cases
 https://sites.google.com/site/predictingstockmovement/video
