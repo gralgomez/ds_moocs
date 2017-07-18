@@ -289,3 +289,4 @@ http://www.datasciencecentral.com/profiles/blogs/big-data-sets-available-for-fre
 
 ## Other
 https://www.dataquest.io/blog/build-a-data-science-portfolio/
+Computational Finance - http://computationalfinance.lsi.upc.edu/
