@@ -299,3 +299,4 @@ DS Paths - https://www.quora.com/How-can-I-become-a-data-scientist-1?redirected_
 https://sites.google.com/site/predictingstockmovement/video
 http://computationalfinance.lsi.upc.edu/wp-content/uploads/2014/09/AArratiaForecastingFTS2014_ho.pdf
 https://www.quora.com/How-can-I-become-a-data-scientist-1?redirected_qid=3799382
+https://gallery.cortanaintelligence.com/browse
