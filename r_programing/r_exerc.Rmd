@@ -289,6 +289,7 @@ http://www.rdatamining.com/
 
 ## Datasets
 http://www.datasciencecentral.com/profiles/blogs/big-data-sets-available-for-free
+https://vincentarelbundock.github.io/Rdatasets/datasets.html
 
 ## Other
 DS Portfolio - https://www.dataquest.io/blog/build-a-data-science-portfolio/
